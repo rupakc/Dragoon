@@ -1,0 +1,26 @@
+<div class="md-padding" layout="column" ng-cloak>
+  <md-card style="box-shadow: none">
+    <md-card-content>
+      <div layout="row" layout-align="center center">
+        <md-input-container class="col-md-6">
+          <input type="text" ng-model="comicName" placeholder="Comic/Marvel Character Name">
+        </md-input-container>
+        </div>
+      <div layout="row" layout-align="center center">
+        <md-input-container>
+          <md-select multiple ng-model="selectedComicSourceLabel" placeholder="Choose a Comic Data Source">
+            <md-option ng-repeat="comicSource in comicSources" ng-value="comicSource.name" ng-cloak>
+              {{comicSource.displayName}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+      </div>
+      <div layout="row" layout-align="center center">
+       <md-button class="md-raised md-primary" ng-click="submit()"> Search </md-button>
+     </div>
+    </md-card-content>
+  </md-card>
+</div>
+
+<custom-angular-accordion accordionData=accordianData ng-show="showAccordion">
+</custom-angular-accordion>

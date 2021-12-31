@@ -1,0 +1,13 @@
+.tastetag {
+  display: inline-block;
+}
+
+.custom-thumb {
+  width:auto;
+  height:400px
+}
+
+.custom-img > img {
+  width:auto;
+  height:200px
+}

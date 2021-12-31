@@ -1,0 +1,39 @@
+<div class="md-padding" ng-cloak="" layout="column">
+  <md-card style="box-shadow: none">
+    <md-card-content>
+      <div layout="row" layout-align="center center">
+        <md-input-container>
+          <input ng-model="sportName" type="search" placeholder="Player/Team Name">
+        </md-input-container>
+        <md-input-container>
+          <input type="search" ng-model="sportType" placeholder="Country/League/Sport">
+        </md-input-container>
+        <md-input-container>
+          <input type="search" ng-model="searchType" placeholder="Type of Search">
+        </md-input-container>
+        </div>
+      <div layout="row" layout-align="center center">
+        <md-input-container>
+          <md-select multiple ng-model="selectedSportSourceLabel" placeholder="Choose a Sports Data Source">
+            <md-option ng-repeat="sportSource in sportSources" ng-value="sportSource.name" ng-cloak>
+              {{sportSource.displayName}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container>
+          <md-select multiple ng-model="selectedSportOperationLabel" placeholder="Choose a Sport Operation">
+            <md-option ng-repeat="sportOperation in sportOperations" ng-value="sportOperation.name" ng-cloak>
+              {{sportOperation.displayName}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+      </div>
+      <div layout="row" layout-align="center center">
+       <md-button class="md-raised md-primary" ng-click="submit()"> Search </md-button>
+     </div>
+    </md-card-content>
+  </md-card>
+</div>
+
+<custom-angular-accordion accordionData=accordianData ng-show="showAccordion">
+</custom-angular-accordion>

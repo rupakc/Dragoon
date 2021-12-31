@@ -1,0 +1,40 @@
+<div class="md-padding" ng-cloak="" layout="column">
+  <md-card style="box-shadow: none">
+    <md-card-content>
+      <div layout="row" layout-align="center center">
+        <md-input-container ng-model="foodName">
+          <label>Food/Ingredient Name</label>
+          <input>
+        </md-input-container>
+
+        <md-input-container>
+          <label>Beer/Cocktail Name</label>
+          <input type="text" ng-model="beerName" ng-init="beerName=sex">
+        </md-input-container>
+        </div>
+      <div layout="row" layout-align="center center">
+        <md-input-container>
+          <label>Choose a Food Data Source</label>
+          <md-select multiple ng-model="foodSourceLabel">
+            <md-option><em>{{foodSourceLabel}}</em></md-option>
+            <md-option ng-repeat="foodSource in foodSources" ng-value="foodSource" ng-cloak>
+              {{foodSource}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container>
+          <label>Choose a Food Operation</label>
+          <md-select multiple ng-model="defaultValue">
+            <md-option><em>{{foodOperationLabel}}</em></md-option>
+            <md-option ng-repeat="foodOperation in foodOperations" ng-value="foodOperation" ng-cloak>
+              {{foodOperation}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+      </div>
+      <div layout="row" layout-align="center center">
+       <md-button class="md-raised md-primary" ng-click="submit()">Search</md-button>
+     </div>
+    </md-card-content>
+  </md-card>
+</div>

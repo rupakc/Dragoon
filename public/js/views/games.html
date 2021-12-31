@@ -1,0 +1,33 @@
+<div class="md-padding" ng-cloak="" layout="column">
+  <md-card style="box-shadow: none">
+    <md-card-content>
+      <div layout="row" layout-align="center center">
+        <md-input-container class="col-md-6">
+          <input ng-model="gameName" type="text" placeholder="Video/Online Game Name">
+        </md-input-container>
+        </div>
+      <div layout="row" layout-align="center center">
+        <md-input-container>
+          <md-select multiple ng-model="selectedGameSourceLabel" placeholder="Choose a Game Data Source">
+            <md-option ng-repeat="gameSource in gameSources" ng-value="gameSource.name" ng-cloak>
+              {{gameSource.displayName}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container>
+          <md-select multiple ng-model="selectedGameOperationLabel" placeholder="Choose a Game Operation">
+            <md-option ng-repeat="gameOperation in gameOperations" ng-value="gameOperation.name" ng-cloak>
+              {{gameOperation.displayName}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+      </div>
+      <div layout="row" layout-align="center center">
+       <md-button class="md-raised md-primary" ng-click="submit()"> Search </md-button>
+     </div>
+    </md-card-content>
+  </md-card>
+</div>
+
+<custom-angular-accordion accordionData=accordianData ng-show="showAccordion">
+</custom-angular-accordion>

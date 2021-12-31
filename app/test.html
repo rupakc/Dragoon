@@ -1,0 +1,115 @@
+<html lang = "en">
+   <head>
+      <title>Project Dragoon Demo</title>
+      <link rel="shortcut icon" type="image/png" href= "resources/dragoon.png">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      <link rel = "stylesheet" href = "//ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+      <link rel = "stylesheet" href = "//fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel ="stylesheet" href="css/fab.css">
+      <link rel ="stylesheet" href="css/accordion.css">
+      <link rel ="stylesheet" href="css/table.css">
+      <link rel ="stylesheet" href="css/tastetag.css">
+      <link rel ="stylesheet" href="css/top_arrow.css">
+      <link rel ="stylesheet" href="css/root.css">
+
+      <script src = "//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <script src = "//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+      <script src = "//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+      <script src = "//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+      <script src = "//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+      <script src = "//ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+      <script src = "//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+
+      <script type="text/javascript" src = "js/libs/ui-bootstrap-tpls-2.5.0.js"></script>
+
+      <script src = "js/core.js"> </script>
+      <script src = "js/appConfig.js"></script>
+
+      <script src = "js/services/commonServices.js"> </script>
+      <script src = "js/services/tasteDiveMovieService.js"> </script>
+      <script src = "js/services/geolocationService.js"> </script>
+      <script src = "js/services/httpLoaderInterceptor.js"> </script>
+      <script src = "js/services/imageRenderService.js"> </script>
+
+      <script src = "js/directives/accordionDirective.js"> </script>
+
+      <script src = "js/controllers/main.js"> </script>
+      <script src = "js/controllers/weatherController.js"> </script>
+      <script src = "js/controllers/bookController.js"> </script>
+      <script src = "js/controllers/entertainmentController.js"> </script>
+      <script src = "js/controllers/gameController.js"> </script>
+      <script src = "js/controllers/forumController.js"> </script>
+      <script src = "js/controllers/foodController.js"> </script>
+      <script src = "js/controllers/sportController.js"> </script>
+      <script src = "js/controllers/movieController.js"> </script>
+      <script src = "js/controllers/comicController.js"> </script>
+
+      <script src = "js/jquery/table_color.js"> </script>
+      <script src = "js/utils/top_arrow.js"> </script>
+   </head>
+
+   <body ng-app = "dragoonApplication" class="ng-cloak">
+     <div ng-controller="headerController"  ng-cloak>
+       <md-toolbar style="background-color:black">
+        <div class="md-toolbar-tools">
+          <md-truncate style="left: 90px; right: 170px; top: 13px; bottom: 13px;">
+            Dragoon
+          </md-truncate>
+
+
+          <!-- Fill with header controller and add dialog -->
+
+          <!-- <span flex></span>
+          <md-button class="md-raised" aria-label="Learn More">
+            About the App
+          </md-button>
+          <md-button class="md-raised" aria-label="Favorite">
+            Onyx
+          </md-button>
+          <md-button class="md-raised" aria-label="Favorite">
+            Vox-Populi
+          </md-button> -->
+
+        </div>
+    </md-toolbar>
+  </div>
+  <!-- <div ng-show="true">
+    <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+  </div> -->
+
+
+      <div class = "fabSpeedDial" id = "speedDialContainer" layout = "row" ng-controller="tabController" ng-cloak>
+         <md-content style="width:700px">
+            <div layout = "row" layout-align = "left center">
+               <md-fab-speed-dial md-open = "tab.isOpen" md-direction = "right" ng-class = "md-scale">
+                  <md-fab-trigger>
+                     <md-button aria-label = "menu" class = "md-fab md-warn" ng-click="toggleView()">
+                        <md-icon class = "material-icons">menu</md-icon>
+                     </md-button>
+                  </md-fab-trigger>
+
+                  <md-fab-actions>
+                    <a ng-repeat ="tabObject in tabObjects" href="{{tabObject.url}}">
+                      <md-button aria-label = "Edit"  class = "md-fab md-raised md-mini md-accent" ng-cloak>
+                         <md-icon class = "material-icons" aria-label = "book">
+                            {{tabObject.iconName}}
+                          </md-icon>
+                          <md-tooltip md-direction="bottom">
+                             {{tabObject.iconTooltip}}
+                         </md-tooltip>
+                      </md-button>
+                  </a>
+                  </md-fab-actions>
+               </md-fab-speed-dial>
+            </div>
+         </md-content>
+      </div>
+
+<div ng-view>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<div class="md-padding" ng-cloak="" layout="column">
+  <md-card style="box-shadow: none">
+    <md-card-content>
+      <div layout="row" layout-align="center center">
+        <md-input-container>
+          <input type="search" ng-model="searchTerm" placeholder="Type a Search Term">
+        </md-input-container>
+        <md-input-container>
+          <input type="text" ng-model="otherDataName" placeholder="Other Data Info">
+        </md-input-container>
+        </div>
+      <div layout="row" layout-align="center center">
+        <md-input-container>
+          <md-select multiple ng-model="selectedForumSourceLabel" placeholder="Choose a Forum Data Source">
+            <md-option ng-repeat="forumSource in forumSources" ng-value="forumSource.name" ng-cloak>
+              {{forumSource.displayName}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container>
+          <md-select ng-model="selectedForumOperationLabel" placeholder="Choose a Forum Operation">
+            <md-option ng-repeat="forumOperation in forumOperations" ng-value="forumOperation.name" ng-cloak>
+              {{forumOperation.displayName}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+      </div>
+      <div layout="row" layout-align="center center">
+       <md-button class="md-raised md-primary" ng-click="submit()"> Search </md-button>
+     </div>
+    </md-card-content>
+  </md-card>
+</div>
+
+<custom-angular-accordion accordionData=accordianData ng-show="showAccordion">
+</custom-angular-accordion>

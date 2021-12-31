@@ -1,0 +1,39 @@
+<div class="md-padding" layout="column" ng-cloak>
+  <md-card style="box-shadow: none">
+    <md-card-content>
+      <div layout="row" layout-align="center center">
+        <md-input-container >
+          <input type="search" ng-model="latitudeAndOthers" placeholder="Latitude/ZipCode/CityName" ng-init="latitudeAndOthers=28.548133600000003">
+        </md-input-container>
+        <md-input-container>
+          <input type="search" ng-model="longitudeAndOthers" placeholder="Longitude/CountryCode" ng-init="longitudeAndOthers=77.35982039999999">
+        </md-input-container>
+        <md-input-container>
+          <input type="text" ng-model="searchType" placeholder="Search Type" ng-init="searchType='geo'">
+        </md-input-container>
+        </div>
+      <div layout="row" layout-align="center center">
+        <md-input-container>
+          <md-select multiple ng-model="selectedWeatherSource" placeholder="Choose a Weather Data Source">
+            <md-option ng-repeat="weatherSource in weatherSources" ng-value="weatherSource.name" ng-cloak>
+              {{weatherSource.displayName}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container>
+          <md-select multiple ng-model="selectedWeatherOperation" placeholder="Choose a Weather Operation">
+            <md-option ng-repeat="weatherOperation in weatherOperations" ng-value="weatherOperation.name" ng-cloak>
+              {{weatherOperation.displayName}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+      </div>
+      <div layout="row" layout-align="center center">
+       <md-button class="md-raised md-primary" ng-click="submit()"> Search </md-button>
+     </div>
+    </md-card-content>
+  </md-card>
+</div>
+
+<custom-angular-accordion accordionData=accordianData ng-show="showAccordion">
+</custom-angular-accordion>
